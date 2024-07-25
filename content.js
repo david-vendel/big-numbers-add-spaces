@@ -6,7 +6,6 @@ function processTextNodes(node) {
   if (node.nodeType === Node.TEXT_NODE) {
     const newText = node.nodeValue.replace(/\d+/g, (match) => formatNumberWithSpaces(match));
     if (newText !== node.nodeValue) {
-      console.log("node.nodeValue",node.nodeValue)
       node.nodeValue = newText;
     }
   } else if (node.nodeType === Node.ELEMENT_NODE && node.childNodes) {
